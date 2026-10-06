@@ -293,3 +293,4 @@ body[data-v="aud"] section[data-only="aud"],body[data-v="task"] section[data-onl
 .hero__grid>*,.donate__grid>*,.sub__grid>*,.life__grid>*,.expert__grid>*,.split>*{min-width:0}
 @media (max-width:820px){.donate-link,.btn-outline--lg{white-space:normal;text-align:center}.sub__row{flex-direction:column}}
 @media (max-width:820px){.donate__tree{max-width:100%;justify-self:stretch}}
+@media (max-width:820px){.main-nav__item>button{font-size:15px;letter-spacing:.3px;height:48px}}
