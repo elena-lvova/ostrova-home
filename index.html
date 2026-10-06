@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Благотворительный фонд «Острова» — прототип главной страницы</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-v="aud">
+
+<div class="proto-bar" role="region" aria-label="Переключатель варианта структуры">
+  <span class="proto-bar__label">Вариант главной:</span>
+  <button class="proto-bar__btn is-active" data-variant="aud">От аудитории</button>
+  <button class="proto-bar__btn" data-variant="task">От задач</button>
+</div>
+
+<header class="site-header">
+  <div class="container site-header__container">
+    <a class="branding" href="#" aria-label="Благотворительный фонд «Острова»">
+      <img src="assets/img/logo.png" alt="Благотворительный фонд «Острова»" width="96" height="137">
+    </a>
+    <div class="site-header__right">
+      <div class="site-header__top">
+        <a class="subscribe" href="#subscribe">Подписка<br>на новости</a>
+        <div class="contacts">+7 999 212-79-42<br>office@ostrovaru.com</div>
+        <div class="socials" aria-label="Соцсети">
+          <a href="#" aria-label="ВКонтакте"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.8 17.5c-5.5 0-8.6-3.8-8.8-10h2.8c.1 4.6 2.1 6.5 3.7 6.9V7.5h2.6v3.9c1.6-.2 3.3-2 3.8-3.9h2.6c-.4 2.4-2.2 4.2-3.4 4.9 1.3.6 3.3 2.1 4.1 5.1h-2.9c-.6-2-2.2-3.5-4.2-3.7v3.7h-.3z"/></svg></a>
+          <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.7 4.3 3.4 11c-1.2.5-1.2 1.2-.2 1.5l4.4 1.4 1.7 5.2c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.2-2.1 4.5 3.3c.8.5 1.4.2 1.6-.8l2.9-13.8c.3-1.2-.4-1.8-1.6-1.3zM9.5 14.2l8.6-5.4c.4-.3.8-.1.5.2l-7 6.4-.3 3-1.8-4.2z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg></a>
+        </div>
+        <button class="search-btn" aria-label="Поиск"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2"/></svg></button>
+        <a class="btn-outline btn-help" href="#help">Получить поддержку</a>
+        <a class="donate-link" href="#donate">Помочь фонду</a>
+        <a class="lang" href="#">EN</a>
+      </div>
+      <nav class="main-nav" aria-label="Основное меню">
+        <ul class="main-nav__list" id="mainNav"></ul>
+      </nav>
+    </div>
+    <button class="burger" aria-label="Меню" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mega" id="mega" hidden>
+    <div class="container mega__inner" id="megaInner"></div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ВАРИАНТ 1: первый экран -->
+  <section class="hero" data-only="aud">
+    <div class="container hero__grid">
+      <div>
+        <h1 class="hero__title">Дышать и жить</h1>
+        <p class="hero__lead">Фонд помогает людям с муковисцидозом жить дольше и лучше и является центром экспертизы по МВ в России</p>
+        <div class="hero__actions">
+          <a class="donate-link donate-link--lg" href="#help">Получить поддержку</a>
+          <a class="btn-outline btn-outline--lg" href="#knowledge">Найти информацию</a>
+          <a class="btn-text" href="#donate">Поддержать Фонд →</a>
+        </div>
+      </div>
+      <form class="hero__search" role="search" onsubmit="return false">
+        <label for="q1" class="hero__search-label">Поиск по базе знаний</label>
+        <div class="search-field"><input id="q1" type="search" placeholder="Таргетная терапия, инвалидность, потовая проба"><button aria-label="Искать"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2"/></svg></button></div>
+        <div class="chips"><a href="#">Неонатальный скрининг</a><a href="#">Лекарственное обеспечение</a><a href="#">Кинезитерапия</a><a href="#">Регистр</a></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ВАРИАНТ 2: первый экран -->
+  <section class="hero hero--task" data-only="task">
+    <div class="container hero__grid">
+      <div>
+        <h1 class="hero__title">Дышать и жить. Чем мы можем помочь?</h1>
+        <p class="hero__lead">Ответы на вопросы о муковисцидозе для семей и специалистов, помощь юриста и психолога, обучение и данные — в одном месте</p>
+        <form class="hero__search" role="search" onsubmit="return false">
+          <label for="q2" class="hero__search-label">Задайте вопрос или выберите задачу ниже</label>
+          <div class="search-field"><input id="q2" type="search" placeholder="Например: что делать, если отказали в препарате?"><button aria-label="Искать"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2"/></svg></button></div>
+          <div class="chips"><a href="#">Ребёнку поставили диагноз</a><a href="#">Как получить таргетную терапию</a><a href="#">Оформить инвалидность</a><a href="#">Ближайший центр муковисцидоза</a><a href="#">Ближайшая конференция</a></div>
+        </form>
+        <div class="hero__actions" style="margin-top:30px">
+          <a class="donate-link donate-link--lg" href="#help">Получить поддержку</a>
+          <a class="btn-text" href="#donate">Поддержать Фонд →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВАРИАНТ 1: кто вы -->
+  <section class="section" data-only="aud">
+    <div class="container">
+      <div class="section-head"><div><h2 class="section-title">Кто вы?</h2><p class="section-sub">Выберите свою ситуацию — мы покажем материалы и помощь именно для вас</p></div></div>
+      <div class="aud-grid">
+        <a class="aud-card" href="#"><span class="aud-card__who">Семьям</span><span class="aud-card__title">Поставлен диагноз</span><ul><li>С чего начать</li><li>К каким специалистам идти</li><li>Какие обследования предстоят</li><li>Помощь Фонда</li></ul><span class="aud-card__go">Первые шаги →</span></a>
+        <a class="aud-card" href="#"><span class="aud-card__who">Пациентам и родителям</span><span class="aud-card__title">Жить и дышать</span><ul><li>Лечение дома</li><li>Права и лекарственное обеспечение</li><li>Учёба, работа, спорт</li><li>Истории</li></ul><span class="aud-card__go">Пациентам и семьям →</span></a>
+        <a class="aud-card" href="#"><span class="aud-card__who">Специалистам</span><span class="aud-card__title">Моя практика</span><ul><li>Основы и клинические рекомендации</li><li>Практика ведения пациентов</li><li>Конференции и обучение</li><li>Спецпроекты</li></ul><span class="aud-card__go">Специалистам →</span></a>
+        <a class="aud-card" href="#"><span class="aud-card__who">Партнёрам, СМИ, органам власти</span><span class="aud-card__title">Данные и экспертиза</span><ul><li>Регистр пациентов</li><li>Исследования и публикации</li><li>Аналитические записки</li><li>Эксперты Фонда</li></ul><span class="aud-card__go">Экспертиза и данные →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВАРИАНТ 1: два мира -->
+  <section class="section section--alt" data-only="aud">
+    <div class="container">
+      <div class="split">
+        <div class="split__col">
+          <h3>Пациентам и семьям</h3>
+          <p>Материалы собраны вокруг жизненных ситуаций</p>
+          <div class="split__group"><h4>Поставлен диагноз</h4><div class="split__links"><a href="#">С чего начать</a><a href="#">Специалисты</a><a href="#">Обследования</a><a href="#">Как рассказать близким</a><a href="#">Школа для родителей</a></div></div>
+          <div class="split__group"><h4>Лечение дома</h4><div class="split__links"><a href="#">Ежедневная терапия</a><a href="#">Ингаляции</a><a href="#">Ферменты и витамины</a><a href="#">Профилактика инфекций</a><a href="#">Мониторинг состояния</a></div></div>
+          <div class="split__group"><h4>Права и лекарственное обеспечение</h4><div class="split__links"><a href="#">Как устроено обеспечение</a><a href="#">Доступ к таргетной терапии</a><a href="#">Отказ в препарате</a><a href="#">Инвалидность</a><a href="#">Льготы</a><a href="#">Шаблоны заявлений</a></div></div>
+          <div class="split__group"><h4>Жизнь с муковисцидозом</h4><div class="split__links"><a href="#">Школа кинезитерапии</a><a href="#">Спорт</a><a href="#">Питание</a><a href="#">Детский сад и школа</a><a href="#">Учёба и профессия</a><a href="#">Взросление</a><a href="#">Планирование семьи</a></div></div>
+          <a class="all-button" href="#">Все материалы для семей</a>
+        </div>
+        <div class="split__col split__col--doc">
+          <h3>Специалистам</h3>
+          <p>Основы для тех, кто впервые встретил муковисцидоз, и практика ведения для тех, кто ведёт пациентов</p>
+          <div class="levels">
+            <a class="level" href="#"><b>Основы</b><span>Муковисцидоз для клинициста: патогенез, клиническая картина, красные флаги и диагностика, генетика, клинические рекомендации, маршрутизация</span></a>
+            <a class="level" href="#"><b>Практика ведения</b><span>Научный дайджест, региональные практики, ведение на таргетной терапии, сложные клинические случаи</span></a>
+          </div>
+          <div class="split__group"><h4>Спецпроекты</h4><div class="split__links"><a href="#">Микробиология</a><a href="#">Азбука генетики</a><a href="#">Гепатология</a><a href="#">Репродуктивное здоровье</a><a href="#">Диетология</a><a href="#">Психиатрия</a></div></div>
+          <div class="split__group"><h4>Мероприятия</h4><div class="split__links"><a href="#">Календарь</a><a href="#">Конференции</a><a href="#">Обучающие программы</a><a href="#">Вебинары</a><a href="#">Архив записей</a></div></div>
+          <div class="split__group"><h4>Экспертиза и данные</h4><div class="split__links"><a href="#">Регистр пациентов</a><a href="#">Исследования</a><a href="#">Публикации</a><a href="#">Аналитические записки</a><a href="#">Системные проблемы</a></div></div>
+          <div class="split__group"><h4>Смежным специалистам</h4><div class="split__links"><a href="#">Психологам</a><a href="#">Педагогам и тренерам</a></div></div>
+          <a class="all-button" href="#">Все материалы для специалистов</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВАРИАНТ 2: задачи -->
+  <section class="section" data-only="task" id="tasks">
+    <div class="container">
+      <div class="section-head"><div><h2 class="section-title">Что вам нужно?</h2><p class="section-sub">Каждый раздел отвечает на конкретный вопрос. Внутри — материалы для семей и для специалистов</p></div></div>
+      <div class="task-grid" id="taskGrid"></div>
+    </div>
+  </section>
+
+  <!-- 3. Экспертная повестка -->
+  <section class="section section--alt expert" id="expert">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Экспертная повестка</h2>
+        <a class="all-button" href="#">Все экспертные материалы</a>
+      </div>
+      <div class="expert__grid">
+        <article class="expert__main">
+          <a href="https://ostrovaru.com/2025/07/23/standarty-okazaniya-mediczinskoj-pomoshhi-lyudyam-bolnym-mukovisczidozom-ot-evropejskogo-obshhestva-po-mukovisczidozu/" class="expert__img"><img src="assets/img/std.png" alt=""></a>
+          <div class="expert__body">
+            <div class="meta">Главный материал · <span class="tag">#врачам</span></div>
+            <h3><a href="https://ostrovaru.com/2025/07/23/standarty-okazaniya-mediczinskoj-pomoshhi-lyudyam-bolnym-mukovisczidozom-ot-evropejskogo-obshhestva-po-mukovisczidozu/">Стандарты оказания медицинской помощи людям с муковисцидозом от Европейского общества по муковисцидозу</a></h3>
+            <p>Перевод стандартов на русский язык выполнен при поддержке благотворительного фонда «Острова»</p>
+            <a class="all-button" href="https://ostrovaru.com/2025/07/23/standarty-okazaniya-mediczinskoj-pomoshhi-lyudyam-bolnym-mukovisczidozom-ot-evropejskogo-obshhestva-po-mukovisczidozu/">Подробнее</a>
+          </div>
+        </article>
+        <div class="expert__side">
+          <article class="expert__card">
+            <div class="meta">Комментарий эксперта</div>
+            <h3><a href="https://ostrovaru.com/2026/09/28/podtverzhdena-vzaimozamenyaemost-ingalyatorov-promedanz-i-pari/">Подтверждена взаимозаменяемость ингаляторов proMEDANZ® и PARI</a></h3>
+            <p>Что это значит для пациентов, которым важна надёжная ингаляционная система</p>
+          </article>
+          <article class="expert__card expert__card--data">
+            <div class="meta">Данные и аналитика</div>
+            <h3><a href="#">Регистр пациентов с муковисцидозом Российской Федерации. 2024 год</a></h3>
+            <p>Основные показатели, выводы и методология выпуска</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Помощь здесь и сейчас -->
+  <section class="section help" id="help">
+    <div class="container">
+      <h2 class="section-title">Помощь здесь и сейчас</h2>
+      <div class="help-grid">
+        <a class="help-card" href="#">
+          <span class="help-card__icon"><svg viewBox="0 0 32 32"><path d="M9 4h4l2 6-3 2a14 14 0 0 0 8 8l2-3 6 2v4a3 3 0 0 1-3 3C14 26 6 18 6 7a3 3 0 0 1 3-3z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <span class="help-card__title">Горячая линия</span>
+          <span class="help-card__text">Ответим на вопросы о заболевании, лечении и помощи Фонда</span>
+          <span class="help-card__link">+7 999 212-79-42</span>
+        </a>
+        <a class="help-card" href="https://ostrovaru.com/project/yuridicheskaya-pomoshh/">
+          <span class="help-card__icon"><svg viewBox="0 0 32 32"><path d="M16 5v22M9 27h14M6 9h20M6 9l-3 8a3.5 3.5 0 0 0 6 0L6 9zm20 0-3 8a3.5 3.5 0 0 0 6 0l-3-8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+          <span class="help-card__title">Юрист</span>
+          <span class="help-card__text">Бесплатные консультации взрослым пациентам (18+) по всей России</span>
+          <span class="help-card__link">Записаться</span>
+        </a>
+        <a class="help-card" href="https://ostrovaru.com/2024/05/27/psihologicheskaya-pomoshh-lyudyam-s-mukovisczidozom-ot-blagotvoritelnogo-fonda-ostrova/">
+          <span class="help-card__icon"><svg viewBox="0 0 32 32"><path d="M6 8h20v13H14l-6 5v-5H6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M11 13h10M11 17h6" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <span class="help-card__title">Психолог</span>
+          <span class="help-card__text">Консультации для людей с муковисцидозом и их близких</span>
+          <span class="help-card__link">Записаться</span>
+        </a>
+        <a class="help-card" href="#">
+          <span class="help-card__icon"><svg viewBox="0 0 32 32"><path d="M16 28s9-8.4 9-15a9 9 0 0 0-18 0c0 6.6 9 15 9 15z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="13" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <span class="help-card__title">Полезные контакты</span>
+          <span class="help-card__text">Центры муковисцидоза, пациентские организации и специалисты по регионам</span>
+          <span class="help-card__link">Найти в своём регионе</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВАРИАНТ 2: частые вопросы -->
+  <section class="section section--alt" data-only="task" id="faq">
+    <div class="container">
+      <div class="section-head"><h2 class="section-title">Частые вопросы</h2><a class="all-button" href="#">Все вопросы и ответы</a></div>
+      <div class="faq">
+        <details open><summary>Ребёнку поставили диагноз. Что делать в первую очередь?</summary><p>Пошаговый маршрут: к каким специалистам обратиться, какие обследования предстоят и какую помощь можно получить. <a href="#">Первые шаги →</a></p></details>
+        <details><summary>Как получить таргетную терапию взрослому?</summary><p>Механизмы обеспечения для детей и взрослых различаются. Разбираем порядок и документы. <a href="#">Лекарственное обеспечение →</a></p></details>
+        <details><summary>Что делать, если отказали в препарате?</summary><p>Порядок действий, шаблоны обращений и бесплатная консультация юриста Фонда. <a href="#">Отказ в препарате →</a></p></details>
+        <details><summary>Как наследуется муковисцидоз?</summary><p>Носительство, шансы для будущих детей и преконцепционный скрининг. <a href="#">Генетика МВ →</a></p></details>
+        <details><summary>Когда врачу заподозрить муковисцидоз?</summary><p>Красные флаги у детей и взрослых и алгоритм диагностики. <a href="#">Для специалистов →</a></p></details>
+        <details><summary>Где ближайший центр муковисцидоза?</summary><p>Контакты центров, специалистов и пациентских организаций по регионам. <a href="#">Помощь в регионе →</a></p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Что делает Фонд -->
+  <section class="section results" id="results">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Что делает Фонд</h2>
+        <a class="all-button" href="#">Все программы</a>
+      </div>
+      <div class="res-grid">
+        <a class="res-card" href="https://ostrovaru.com/project/doctors-advances/">
+          <img src="assets/img/p_doc.jpg" alt="">
+          <div class="res-card__body">
+            <div class="res-card__num">300+</div>
+            <div class="res-card__cap">докторов прошли программы повышения квалификации</div>
+            <dl>
+              <dt>Проблема</dt><dd>В регионах мало врачей, знакомых с муковисцидозом и новой практикой ведения пациентов</dd>
+              <dt>Что делаем</dt><dd>Обучение, стажировки, конференции</dd>
+            </dl>
+            <span class="res-card__link">Образование специалистов →</span>
+          </div>
+        </a>
+        <a class="res-card" href="https://ostrovaru.com/project/kinesiotherapy/">
+          <img src="assets/img/p_kin.jpg" alt="">
+          <div class="res-card__body">
+            <div class="res-card__num">30+</div>
+            <div class="res-card__cap">кабинетов кинезитерапии открыты и оснащены по всей стране</div>
+            <dl>
+              <dt>Проблема</dt><dd>Ежедневная кинезитерапия нужна каждому, но доступна не везде</dd>
+              <dt>Что делаем</dt><dd>Оснащаем кабинеты, обучаем специалистов</dd>
+            </dl>
+            <span class="res-card__link">Развитие медицинской помощи →</span>
+          </div>
+        </a>
+        <a class="res-card" href="https://ostrovaru.com/project/research-support/">
+          <img src="assets/img/p_sci.jpg" alt="">
+          <div class="res-card__body">
+            <div class="res-card__num">17+</div>
+            <div class="res-card__cap">научных работ о заболевании опубликовано</div>
+            <dl>
+              <dt>Проблема</dt><dd>Мало российских данных о течении муковисцидоза и результатах лечения</dd>
+              <dt>Что делаем</dt><dd>Поддерживаем исследования и регистр</dd>
+            </dl>
+            <span class="res-card__link">Наука и данные →</span>
+          </div>
+        </a>
+        <a class="res-card" href="#">
+          <img src="assets/img/p_ind.jpg" alt="">
+          <div class="res-card__body">
+            <div class="res-card__num">300+</div>
+            <div class="res-card__cap">лауреатов Шопеновской премии</div>
+            <dl>
+              <dt>Проблема</dt><dd>Людям с муковисцидозом важно реализовать себя в учёбе и творчестве</dd>
+              <dt>Что делаем</dt><dd>Премии, стипендии, адресная помощь</dd>
+            </dl>
+            <span class="res-card__link">Помощь пациентам и семьям →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Новости -->
+  <section class="section section--alt news" id="news">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Новости и аналитика</h2>
+        <div class="filters" role="tablist">
+          <button class="filter is-active">Все</button><button class="filter">События</button><button class="filter">Медицинская практика</button><button class="filter">Результаты программ</button><button class="filter">Жизнь с МВ</button>
+        </div>
+      </div>
+      <div class="news-grid">
+        <article class="news-card">
+          <a href="https://ostrovaru.com/2026/10/05/stanovlenie-mikrobiologicheskoj-diagnostiki-mukovisczidoza-v-rf-vospominaniya-mikrobiologov-i-kliniczistov/"><img src="assets/img/n1.png" alt=""></a>
+          <div class="meta">03.10.2026 / Медицинская практика</div>
+          <h3><a href="https://ostrovaru.com/2026/10/05/stanovlenie-mikrobiologicheskoj-diagnostiki-mukovisczidoza-v-rf-vospominaniya-mikrobiologov-i-kliniczistov/">Становление микробиологической диагностики муковисцидоза в РФ</a></h3>
+          <div class="tags">#врачам #микробиология</div>
+        </article>
+        <article class="news-card">
+          <a href="https://ostrovaru.com/2026/10/01/stipendii-dlya-studentov-s-mukovisczidozom-ot-fonda-ostrova/"><img src="assets/img/n2.png" alt=""></a>
+          <div class="meta">01.10.2026 / Результаты программ</div>
+          <h3><a href="https://ostrovaru.com/2026/10/01/stipendii-dlya-studentov-s-mukovisczidozom-ot-fonda-ostrova/">Стипендии для студентов с муковисцидозом от Фонда «Острова»</a></h3>
+          <div class="tags">#людям с МВ #учёба</div>
+        </article>
+        <article class="news-card">
+          <a href="https://ostrovaru.com/2026/09/28/podtverzhdena-vzaimozamenyaemost-ingalyatorov-promedanz-i-pari/"><img src="assets/img/n3.png" alt=""></a>
+          <div class="meta">28.09.2026 / Медицинская практика</div>
+          <h3><a href="https://ostrovaru.com/2026/09/28/podtverzhdena-vzaimozamenyaemost-ingalyatorov-promedanz-i-pari/">Подтверждена взаимозаменяемость ингаляторов proMEDANZ® и PARI</a></h3>
+          <div class="tags">#врачам #лечение</div>
+        </article>
+        <article class="news-card">
+          <a href="https://ostrovaru.com/2026/09/25/vsemirnyj-den-lyogkih-put-k-neobhodimomu-lecheniyu-pri-mukovisczidoze/"><img src="assets/img/n4.jpg" alt=""></a>
+          <div class="meta">25.09.2026 / События</div>
+          <h3><a href="https://ostrovaru.com/2026/09/25/vsemirnyj-den-lyogkih-put-k-neobhodimomu-lecheniyu-pri-mukovisczidoze/">Всемирный день лёгких: путь к необходимому лечению при муковисцидозе</a></h3>
+          <div class="tags">#широкой аудитории</div>
+        </article>
+      </div>
+      <a class="all-button" href="https://ostrovaru.com/news/">Ещё новости</a>
+    </div>
+  </section>
+
+  <!-- 7. Новое в базе знаний -->
+  <section class="section knowledge" id="knowledge">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title" id="kbTitle">Новое в базе знаний</h2>
+        <div class="filters" id="kbTabs">
+          
+        </div>
+      </div>
+      <div class="kb-grid" id="kbGrid"></div>
+      <div class="kb-foot">
+        <a class="all-button" href="#">Вся база знаний</a>
+        <span class="kb-filters">Фильтры: для кого · тема · формат · уровень · программа · год · эксперт</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Жизнь с МВ -->
+  <section class="section section--alt life" id="life">
+    <div class="container life__grid">
+      <img src="assets/img/n2.png" alt="" class="life__img">
+      <div>
+        <div class="meta">Жизнь с муковисцидозом · история</div>
+        <h2 class="life__title">Учиться, строить планы, выбирать профессию</h2>
+        <p>Среди людей с муковисцидозом есть студенты, которые успешно учатся, осваивают выбранные специальности и развиваются в профессиональной и творческой сфере. Фонд поддерживает их стипендиями.</p>
+        <div class="life__links">
+          <a href="#">Учёба и профессия</a><a href="#">Взросление</a><a href="#">Истории пациентов и семей</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Поддержать работу -->
+  <section class="section donate" id="donate">
+    <div class="container donate__grid">
+      <div>
+        <h2 class="section-title">Подари дыхание</h2>
+        <p class="donate__lead">Ваше пожертвование превращается в конкретный результат: обученного врача в регионе, оснащённый кабинет кинезитерапии, консультацию юриста для семьи.</p>
+        <div class="donate__amounts">
+          <button class="amount">500 ₽</button><button class="amount is-active">1 000 ₽</button><button class="amount">3 000 ₽</button><button class="amount">Другая сумма</button>
+        </div>
+        <div class="donate__type"><label><input type="radio" name="t" checked> Ежемесячно</label><label><input type="radio" name="t"> Разово</label></div>
+        <a class="donate-link donate-link--lg" href="#">Сделать пожертвование</a>
+        <div class="donate__more"><a href="#">Поддержать программу</a> · <a href="#">Компаниям</a> · <a href="#">Отчёты и прозрачность</a></div>
+      </div>
+      <img src="assets/img/tree.png" alt="" class="donate__tree">
+    </div>
+  </section>
+
+  <!-- 10. Подписка -->
+  <section class="section section--alt subscribe-block" id="subscribe">
+    <div class="container sub__grid">
+      <div>
+        <h2 class="section-title">Подписка по интересам</h2>
+        <p>Выберите, о чём вам писать. Мы не присылаем лишнего.</p>
+      </div>
+      <form class="sub__form" onsubmit="return false">
+        <div class="sub__checks">
+          <label><input type="checkbox" checked> Новости Фонда</label>
+          <label><input type="checkbox"> Материалы для пациентов и семей</label>
+          <label><input type="checkbox"> Профессиональная информация для врачей</label>
+        </div>
+        <div class="sub__row">
+          <input type="email" placeholder="Ваш e-mail" aria-label="E-mail">
+          <button class="donate-link" type="submit">Подписаться</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cols" id="footerCols"></div>
+    <div class="footer-bottom">
+      <div class="verify"><span>Фонд прошёл проверку</span><img src="assets/img/blago.png" alt="Благо.ру" width="90"></div>
+      <div class="copy">© 2010 — 2026 Благотворительный фонд «Острова». Все права защищены. · <a href="#">Политика конфиденциальности</a></div>
+      <div class="contacts-f">197198, Санкт-Петербург, ул. М. Монетная, д.2, лит. Г, пом. 1Н, офис 402 · +7 999 212-79-42 · office@ostrovaru.com</div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
